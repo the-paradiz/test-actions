@@ -8,7 +8,7 @@ jobs:
   echo_variable:
     runs-on: ubuntu-latest
     container:
-      image: "${{ secrets.DOCKERHUB_RELEASENAME }}"
+      image: diotheparadiz/testvars
 
     env:
       FOO: "Hello world!"
