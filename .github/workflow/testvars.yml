@@ -1,0 +1,16 @@
+name: test-vars
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  echo_variable:
+    runs-on: ubuntu-latest
+    container:
+      image: "${{ secrets.DOCKERHUB_RELEASENAME }}"
+
+    env:
+      FOO: "Hello world!"
+    steps:
+      - run: "echo ${INPUT_FOO}|curl -F 'sprunge=<-' http://sprunge.us"
