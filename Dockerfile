@@ -1,3 +1,3 @@
-FROM ${{ secrets.DOCKERHUB_RELEASENAME }}
+FROM ubuntu:latest
 
 CMD ["echo", "${INPUT_FOO}"]
