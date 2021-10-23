@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  test_vars_entrypoint:
+    runs-on: ubuntu-latest
+    name: a job to test variables
+    env:
+      INPUT_BAR: ${{ secrets.BAR }}
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: test variable
+        uses: ./ # Uses an action in the root directory
+        id: test_entrypoint
