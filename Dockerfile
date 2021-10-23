@@ -2,4 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
-CMD ["echo", "${INPUT_FOO}"]
+COPY entrypoint.sh /entrypoint.sh
+
+#CMD ["echo", "${INPUT_FOO}"]
+ENTRYPOINT ["/entrypoint.sh"]
