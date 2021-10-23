@@ -1,5 +1,7 @@
 # action.yml
 name: 'Print var from entrypoint.sh'
+on:
+  push:
 runs:
   using: 'docker'
   image: 'Dockerfile'
